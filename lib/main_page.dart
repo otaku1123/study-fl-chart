@@ -1,3 +1,6 @@
+import 'package:fl_chart_sample/widget/chart_area_widget.dart';
+import 'package:fl_chart_sample/widget/code_preview_widget.dart';
+import 'package:fl_chart_sample/widget/setting_widget.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
@@ -18,27 +21,18 @@ class MainPage extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Container(
-                      color: Colors.red,
-                      child: const Text('Main Content'),
-                    ),
+                    child: ChartAreaWidget(),
                   ),
                   Expanded(
                     flex: 1,
-                    child: Container(
-                      color: Colors.blue,
-                      child: const Text('code'),
-                    ),
+                    child: CodePreviewWidget(),
                   ),
                 ],
               ),
             ),
             Expanded(
               flex: 1,
-              child: Container(
-                color: Colors.green,
-                child: Text('setting parameters'),
-              ),
+              child: SettingWidget(),
             ),
           ],
         ),
