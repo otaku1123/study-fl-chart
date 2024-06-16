@@ -1,8 +1,18 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
+import '../provider/chart_state_notifier.dart';
+import '../state/line_chart_state.dart';
+
 class ChartAreaWidget extends StatelessWidget {
-  const ChartAreaWidget({super.key});
+  const ChartAreaWidget({
+    super.key,
+    required this.chartState,
+    required this.chartStateNotifier,
+  });
+
+  final LineChartState chartState;
+  final ChartStateNotifier chartStateNotifier;
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +21,14 @@ class ChartAreaWidget extends StatelessWidget {
         gridData: flGridData,
         borderData: flBorderData,
         lineBarsData: lineBarDataList,
+        titlesData: titleData,
+        backgroundColor: chartState.backgroundColor,
       ),
     );
   }
 
   FlGridData get flGridData => FlGridData(
-        show: true,
+        show: chartState.showGrid,
         drawVerticalLine: true,
         drawHorizontalLine: true,
         getDrawingHorizontalLine: (value) {
@@ -70,4 +82,18 @@ class ChartAreaWidget extends StatelessWidget {
           ),
         ),
       ];
+
+  FlTitlesData get titleData => FlTitlesData(
+        leftTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            reservedSize: 30,
+            getTitlesWidget: (value, meta) {
+              String text = value.toInt().toString();
+              return SideTitleWidget(
+                  axisSide: meta.axisSide, space: 8, child: Text(text));
+            },
+          ),
+        ),
+      );
 }
