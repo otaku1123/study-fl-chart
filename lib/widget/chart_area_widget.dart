@@ -29,8 +29,8 @@ class ChartAreaWidget extends StatelessWidget {
 
   FlGridData get flGridData => FlGridData(
         show: chartState.showGrid,
-        drawVerticalLine: true,
-        drawHorizontalLine: true,
+        drawVerticalLine: chartState.showVerticalGrid,
+        drawHorizontalLine: chartState.showHorizontalGrid,
         getDrawingHorizontalLine: (value) {
           return FlLine(
             color: Colors.grey,
@@ -43,6 +43,8 @@ class ChartAreaWidget extends StatelessWidget {
             strokeWidth: 1,
           );
         },
+        horizontalInterval: 1,
+        verticalInterval: 1,
       );
 
   FlBorderData get flBorderData => FlBorderData(
