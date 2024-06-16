@@ -33,6 +33,10 @@ class ChartStateNotifier extends StateNotifier<LineChartState> {
     state = state.copyWith(verticalInterval: interval);
   }
 
+  void updateShowBorder(bool showBorder) {
+    state = state.copyWith(showBorder: showBorder);
+  }
+
   void updateBackgroundColor(Color color) {
     state = state.copyWith(backgroundColor: color);
   }

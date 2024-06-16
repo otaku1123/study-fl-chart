@@ -93,8 +93,8 @@ class SettingWidget extends StatelessWidget {
           tiles: [
             SettingsTile.switchTile(
               title: Text('show'),
-              initialValue: true,
-              onToggle: (_) {},
+              initialValue: chartState.showBorder,
+              onToggle: chartStateNotifier.updateShowBorder,
             ),
             SettingsTile(
               title: Text('border'),

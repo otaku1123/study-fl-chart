@@ -48,7 +48,7 @@ class ChartAreaWidget extends StatelessWidget {
       );
 
   FlBorderData get flBorderData => FlBorderData(
-        show: true,
+        show: chartState.showBorder,
         border: const Border(
           bottom: BorderSide(
             color: Colors.black,

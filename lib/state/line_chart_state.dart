@@ -11,6 +11,9 @@ class LineChartState {
   double? horizontalInterval;
   double? verticalInterval;
 
+  //borderData
+  bool showBorder = true;
+
   // 背景色
   Color? backgroundColor;
 
@@ -21,6 +24,7 @@ class LineChartState {
     this.showVerticalGrid = true,
     this.horizontalInterval,
     this.verticalInterval,
+    this.showBorder = true,
     this.backgroundColor,
   });
 
@@ -35,6 +39,7 @@ class LineChartState {
     bool? showVerticalGrid,
     double? horizontalInterval,
     double? verticalInterval,
+    bool? showBorder,
     Color? backgroundColor,
   }) {
     return LineChartState(
@@ -44,6 +49,7 @@ class LineChartState {
       showVerticalGrid: showVerticalGrid ?? this.showVerticalGrid,
       horizontalInterval: horizontalInterval ?? this.horizontalInterval,
       verticalInterval: verticalInterval ?? this.verticalInterval,
+      showBorder: showBorder ?? this.showBorder,
       backgroundColor: backgroundColor ?? this.backgroundColor,
     );
   }
