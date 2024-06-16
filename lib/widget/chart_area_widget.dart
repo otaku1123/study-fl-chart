@@ -43,8 +43,8 @@ class ChartAreaWidget extends StatelessWidget {
             strokeWidth: 1,
           );
         },
-        horizontalInterval: 1,
-        verticalInterval: 1,
+        horizontalInterval: chartState.horizontalInterval,
+        verticalInterval: chartState.verticalInterval,
       );
 
   FlBorderData get flBorderData => FlBorderData(

@@ -50,10 +50,42 @@ class SettingWidget extends StatelessWidget {
               initialValue: chartState.showVerticalGrid,
               onToggle: chartStateNotifier.updateShowVerticalGrid,
             ),
-            SettingsTile(title: Text('getDrawingHorizontalLine'),),
-            SettingsTile(title: Text('getDrawingVerticalLine'),),
-            SettingsTile(title: Text('horizontalInterval'),),
-            SettingsTile(title: Text('verticalInterval'),),
+            SettingsTile(
+              title: Text('getDrawingHorizontalLine'),
+            ),
+            SettingsTile(
+              title: Text('getDrawingVerticalLine'),
+            ),
+            SettingsTile(
+              title: Text('horizontalInterval'),
+              value: DropdownButtonFormField(
+                value: chartState.horizontalInterval,
+                items: [0.5, 1, 2, 3, 4, 5]
+                    .map((e) => DropdownMenuItem(
+                          value: e,
+                          child: Text(e.toString()),
+                        ))
+                    .toList(),
+                onChanged: (value) {
+                  chartStateNotifier.updateHorizontalInterval(value!.toDouble());
+                },
+              ),
+            ),
+            SettingsTile(
+              title: Text('verticalInterval'),
+              value: DropdownButtonFormField(
+                value: chartState.verticalInterval,
+                items: [0.5, 1, 2, 3, 4, 5]
+                    .map((e) => DropdownMenuItem(
+                          value: e,
+                          child: Text(e.toString()),
+                        ))
+                    .toList(),
+                onChanged: (value) {
+                  chartStateNotifier.updateVerticalInterval(value!.toDouble());
+                },
+              ),
+            ),
           ],
         ),
         SettingsSection(
