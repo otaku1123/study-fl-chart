@@ -25,6 +25,14 @@ class ChartStateNotifier extends StateNotifier<LineChartState> {
     state = state.copyWith(showHorizontalGrid: showHorizontalGrid);
   }
 
+  void updateHorizontalInterval(double interval) {
+    state = state.copyWith(horizontalInterval: interval);
+  }
+
+  void updateVerticalInterval(double interval) {
+    state = state.copyWith(verticalInterval: interval);
+  }
+
   void updateBackgroundColor(Color color) {
     state = state.copyWith(backgroundColor: color);
   }
