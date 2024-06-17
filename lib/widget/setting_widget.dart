@@ -60,14 +60,14 @@ class SettingWidget extends StatelessWidget {
               title: Text('horizontalInterval'),
               value: DropdownButtonFormField(
                 value: chartState.horizontalInterval,
-                items: [0.5, 1, 2, 3, 4, 5]
+                items: [null, 0.5, 1, 2, 3, 4, 5]
                     .map((e) => DropdownMenuItem(
                           value: e,
                           child: Text(e.toString()),
                         ))
                     .toList(),
                 onChanged: (value) {
-                  chartStateNotifier.updateHorizontalInterval(value!.toDouble());
+                  chartStateNotifier.updateHorizontalInterval(value as double?);
                 },
               ),
             ),
@@ -75,14 +75,14 @@ class SettingWidget extends StatelessWidget {
               title: Text('verticalInterval'),
               value: DropdownButtonFormField(
                 value: chartState.verticalInterval,
-                items: [0.5, 1, 2, 3, 4, 5]
+                items: [null, 0.5, 1, 2, 3, 4, 5]
                     .map((e) => DropdownMenuItem(
                           value: e,
                           child: Text(e.toString()),
                         ))
                     .toList(),
                 onChanged: (value) {
-                  chartStateNotifier.updateVerticalInterval(value!.toDouble());
+                  chartStateNotifier.updateVerticalInterval(value as double?);
                 },
               ),
             ),

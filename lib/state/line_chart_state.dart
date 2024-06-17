@@ -53,4 +53,21 @@ class LineChartState {
       backgroundColor: backgroundColor ?? this.backgroundColor,
     );
   }
+
+  // nullありでコピー
+  LineChartState copyWithNull({
+    bool chartTitle = false,
+    bool horizontalInterval = false,
+    bool verticalInterval = false,
+    bool barWidth = false,
+    bool backgroundColor = false,
+  }) {
+    return LineChartState(
+      chartTitle: chartTitle ? null : this.chartTitle,
+      horizontalInterval: horizontalInterval ? null : this.horizontalInterval,
+      verticalInterval: verticalInterval ? null : this.verticalInterval,
+      barWidth: barWidth ? null : this.barWidth,
+      backgroundColor: backgroundColor ? null : this.backgroundColor,
+    );
+  }
 }
