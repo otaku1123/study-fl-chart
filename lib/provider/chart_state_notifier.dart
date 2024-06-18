@@ -62,6 +62,38 @@ class ChartStateNotifier extends StateNotifier<LineChartState> {
     state = state.copyWith(showBorder: showBorder);
   }
 
+  void updateTopBorderColor(Color color) {
+    state = state.copyWith(topBorderColor: color);
+  }
+
+  void updateTopBorderWidth(double? width) {
+    state = state.copyWith(topBorderWidth: width);
+  }
+
+  void updateLeftBorderColor(Color color) {
+    state = state.copyWith(leftBorderColor: color);
+  }
+
+  void updateLeftBorderWidth(double? width) {
+    state = state.copyWith(leftBorderWidth: width);
+  }
+
+  void updateRightBorderColor(Color color) {
+    state = state.copyWith(rightBorderColor: color);
+  }
+
+  void updateRightBorderWidth(double? width) {
+    state = state.copyWith(rightBorderWidth: width);
+  }
+
+  void updateBottomBorderColor(Color color) {
+    state = state.copyWith(bottomBorderColor: color);
+  }
+
+  void updateBottomBorderWidth(double? width) {
+    state = state.copyWith(bottomBorderWidth: width);
+  }
+
   void updateLineColor(Color color) {
     state = state.copyWith(lineColor: color);
   }

@@ -49,20 +49,22 @@ class ChartAreaWidget extends StatelessWidget {
 
   FlBorderData get flBorderData => FlBorderData(
         show: chartState.showBorder,
-        border: const Border(
+        border: Border(
           bottom: BorderSide(
-            color: Colors.black,
-            width: 1,
+            color: chartState.bottomBorderColor,
+            width: chartState.bottomBorderWidth,
           ),
           left: BorderSide(
-            color: Colors.black,
-            width: 1,
+            color: chartState.leftBorderColor,
+            width: chartState.leftBorderWidth,
           ),
           right: BorderSide(
-            color: Colors.transparent,
+            color: chartState.rightBorderColor,
+            width: chartState.rightBorderWidth,
           ),
           top: BorderSide(
-            color: Colors.transparent,
+            color: chartState.topBorderColor,
+            width: chartState.topBorderWidth,
           ),
         ),
       );

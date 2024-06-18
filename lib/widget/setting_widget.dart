@@ -58,15 +58,16 @@ class SettingWidget extends StatelessWidget {
                   SettingsTile(
                     title: Text('line width'),
                     value: DropdownButtonFormField(
-                        items: [0, 1, 2, 3, 4, 5]
-                            .map((e) => DropdownMenuItem(
-                            value: e,
-                            child: Text(e.toString()),
-                        ))
-                        .toList(),
-                        onChanged: (value) {
-                          chartStateNotifier.updateHorizontalGridLineWidth(value as double?);
-                        },
+                      items: [0, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier
+                            .updateHorizontalGridLineWidth(value as double?);
+                      },
                     ),
                   ),
                   SettingsTile(
@@ -90,12 +91,13 @@ class SettingWidget extends StatelessWidget {
                     value: DropdownButtonFormField(
                       items: [0, 1, 2, 3, 4, 5]
                           .map((e) => DropdownMenuItem(
-                            value: e,
-                            child: Text(e.toString()),
-                          ))
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
                           .toList(),
                       onChanged: (value) {
-                        chartStateNotifier.updateVerticalGridLineWidth(value as double?);
+                        chartStateNotifier
+                            .updateVerticalGridLineWidth(value as double?);
                       },
                     ),
                   ),
@@ -153,6 +155,110 @@ class SettingWidget extends StatelessWidget {
             ),
             SettingsTile(
               title: Text('border'),
+              value: Column(
+                children: [
+                  SettingsTile(
+                    title: Text('top color'),
+                    value: ColorPickerWidget(
+                      pickerColor: chartState.topBorderColor,
+                      onColorChanged: (color) {
+                        chartStateNotifier.updateTopBorderColor(color);
+                      },
+                    ),
+                  ),
+                  SettingsTile(
+                    title: Text('top line width'),
+                    value: DropdownButtonFormField(
+                      value: chartState.topBorderWidth,
+                      items: [0, 0.5, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier
+                            .updateTopBorderWidth(value as double);
+                      },
+                    ),
+                  ),
+                  SettingsTile(
+                    title: Text('left color'),
+                    value: ColorPickerWidget(
+                      pickerColor: chartState.leftBorderColor,
+                      onColorChanged: (color) {
+                        chartStateNotifier.updateLeftBorderColor(color);
+                      },
+                    ),
+                  ),
+                  SettingsTile(
+                    title: Text('left line width'),
+                    value: DropdownButtonFormField(
+                      value: chartState.leftBorderWidth,
+                      items: [0, 0.5, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier
+                            .updateLeftBorderWidth(value as double);
+                      },
+                    ),
+                  ),
+                  SettingsTile(
+                    title: Text('right color'),
+                    value: ColorPickerWidget(
+                      pickerColor: chartState.rightBorderColor,
+                      onColorChanged: (color) {
+                        chartStateNotifier.updateRightBorderColor(color);
+                      },
+                    ),
+                  ),
+                  SettingsTile(
+                    title: Text('right line width'),
+                    value: DropdownButtonFormField(
+                      value: chartState.rightBorderWidth,
+                      items: [0, 0.5, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier
+                            .updateRightBorderWidth(value as double);
+                      },
+                    ),
+                  ),
+                  SettingsTile(
+                    title: Text('bottom color'),
+                    value: ColorPickerWidget(
+                      pickerColor: chartState.bottomBorderColor,
+                      onColorChanged: (color) {
+                        chartStateNotifier.updateBottomBorderColor(color);
+                      },
+                    ),
+                  ),
+                  SettingsTile(
+                    title: Text('bottom line width'),
+                    value: DropdownButtonFormField(
+                      value: chartState.bottomBorderWidth,
+                      items: [0, 0.5, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier
+                            .updateBottomBorderWidth(value as double);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

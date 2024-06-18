@@ -17,6 +17,14 @@ class LineChartState {
 
   // borderData
   bool showBorder = true;
+  Color topBorderColor = Colors.black;
+  double topBorderWidth = 1.0;
+  Color leftBorderColor = Colors.black;
+  double leftBorderWidth = 1.0;
+  Color rightBorderColor = Colors.black;
+  double rightBorderWidth = 1.0;
+  Color bottomBorderColor = Colors.black;
+  double bottomBorderWidth = 1.0;
 
   // lineBarsData
   Color lineColor = Colors.blue;
@@ -40,6 +48,14 @@ class LineChartState {
     this.horizontalInterval,
     this.verticalInterval,
     this.showBorder = true,
+    this.topBorderColor = Colors.black,
+    this.topBorderWidth = 1.0,
+    this.leftBorderColor = Colors.black,
+    this.leftBorderWidth = 1.0,
+    this.rightBorderColor = Colors.black,
+    this.rightBorderWidth = 1.0,
+    this.bottomBorderColor = Colors.black,
+    this.bottomBorderWidth = 1.0,
     this.lineColor = Colors.blue,
     this.isCurved = true,
     this.barWidth = 2.0,
@@ -65,6 +81,14 @@ class LineChartState {
     double? horizontalInterval,
     double? verticalInterval,
     bool? showBorder,
+    Color? topBorderColor,
+    double? topBorderWidth,
+    Color? leftBorderColor,
+    double? leftBorderWidth,
+    Color? rightBorderColor,
+    double? rightBorderWidth,
+    Color? bottomBorderColor,
+    double? bottomBorderWidth,
     Color? lineColor,
     bool? isCurved,
     double? barWidth,
@@ -84,6 +108,14 @@ class LineChartState {
       horizontalInterval: horizontalInterval ?? this.horizontalInterval,
       verticalInterval: verticalInterval ?? this.verticalInterval,
       showBorder: showBorder ?? this.showBorder,
+      topBorderColor: topBorderColor ?? this.topBorderColor,
+      topBorderWidth: topBorderWidth ?? this.topBorderWidth,
+      leftBorderColor: leftBorderColor ?? this.leftBorderColor,
+      leftBorderWidth: leftBorderWidth ?? this.leftBorderWidth,
+      rightBorderColor: rightBorderColor ?? this.rightBorderColor,
+      rightBorderWidth: rightBorderWidth ?? this.rightBorderWidth,
+      bottomBorderColor: bottomBorderColor ?? this.bottomBorderColor,
+      bottomBorderWidth: bottomBorderWidth ?? this.bottomBorderWidth,
       lineColor: lineColor ?? this.lineColor,
       isCurved: isCurved ?? this.isCurved,
       barWidth: barWidth ?? this.barWidth,
