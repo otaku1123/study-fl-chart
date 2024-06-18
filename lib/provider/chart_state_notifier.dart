@@ -2,7 +2,8 @@ import 'package:fl_chart_sample/state/line_chart_state.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final chartStateProvider = StateNotifierProvider<ChartStateNotifier, LineChartState>(
+final chartStateProvider =
+    StateNotifierProvider<ChartStateNotifier, LineChartState>(
   (ref) => ChartStateNotifier(LineChartState.initial()),
 );
 
@@ -51,10 +52,10 @@ class ChartStateNotifier extends StateNotifier<LineChartState> {
 
   void updateBarWidth(double? width) {
     if (width == null) {
-      state = state.copyWithNull(barWidth: true);
-    } else {
-      state = state.copyWith(barWidth: width);
+      return;
     }
+
+    state = state.copyWith(barWidth: width);
   }
 
   void updateIsStrokeCapRound(bool isStrokeCapRound) {

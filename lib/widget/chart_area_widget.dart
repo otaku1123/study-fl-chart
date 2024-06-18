@@ -77,7 +77,7 @@ class ChartAreaWidget extends StatelessWidget {
             FlSpot(4, 5),
           ],
           isCurved: chartState.isCurved,
-          barWidth: 4,
+          barWidth: chartState.barWidth,
           isStrokeCapRound: chartState.isStrokeCapRound,
           dotData: FlDotData(
             show: chartState.showDotData,

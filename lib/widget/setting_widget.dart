@@ -114,6 +114,18 @@ class SettingWidget extends StatelessWidget {
             ),
             SettingsTile(
               title: Text('barWidth'),
+              value: DropdownButtonFormField(
+                value: chartState.barWidth,
+                items: [0.5, 1, 2, 3, 4, 5]
+                    .map((e) => DropdownMenuItem(
+                          value: e,
+                          child: Text(e.toString()),
+                        ))
+                    .toList(),
+                onChanged: (value) {
+                  chartStateNotifier.updateBarWidth(value as double);
+                },
+              ),
             ),
             SettingsTile.switchTile(
               title: Text('isStrokeCapRound'),
@@ -158,6 +170,18 @@ class SettingWidget extends StatelessWidget {
               onPressed: (_) {
                 chartStateNotifier.updateBackgroundColor(Colors.blue);
               },
+            ),
+            SettingsTile(
+              title: Text('transparent'),
+              onPressed: (_) {
+                chartStateNotifier.updateBackgroundColor(Colors.transparent);
+              },
+            ),
+            SettingsTile.navigation(
+              title: Text('カスタム'),
+              leading: Icon(Icons.color_lens),
+              value: Text('色を選択'),
+              onPressed: (_) {},
             ),
           ],
         ),

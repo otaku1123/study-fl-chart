@@ -16,7 +16,7 @@ class LineChartState {
 
   // lineBarsData
   bool isCurved = true;
-  double? barWidth;
+  double barWidth = 2.0;
   bool isStrokeCapRound = true;
   bool showDotData = true;
 
@@ -32,7 +32,7 @@ class LineChartState {
     this.verticalInterval,
     this.showBorder = true,
     this.isCurved = true,
-    this.barWidth,
+    this.barWidth = 2.0,
     this.isStrokeCapRound = true,
     this.showDotData = true,
     this.backgroundColor,
@@ -40,6 +40,7 @@ class LineChartState {
 
   LineChartState.initial() {
     chartTitle = 'Line Chart';
+
   }
 
   LineChartState copyWith({
@@ -77,14 +78,12 @@ class LineChartState {
     bool chartTitle = false,
     bool horizontalInterval = false,
     bool verticalInterval = false,
-    bool barWidth = false,
     bool backgroundColor = false,
   }) {
     return LineChartState(
       chartTitle: chartTitle ? null : this.chartTitle,
       horizontalInterval: horizontalInterval ? null : this.horizontalInterval,
       verticalInterval: verticalInterval ? null : this.verticalInterval,
-      barWidth: barWidth ? null : this.barWidth,
       backgroundColor: backgroundColor ? null : this.backgroundColor,
     );
   }
