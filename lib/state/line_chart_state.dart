@@ -21,7 +21,7 @@ class LineChartState {
   bool showDotData = true;
 
   // 背景色
-  Color? backgroundColor;
+  Color backgroundColor = Colors.white;
 
   LineChartState({
     this.chartTitle,
@@ -35,7 +35,7 @@ class LineChartState {
     this.barWidth = 2.0,
     this.isStrokeCapRound = true,
     this.showDotData = true,
-    this.backgroundColor,
+    this.backgroundColor = Colors.white,
   });
 
   LineChartState.initial() {
@@ -78,13 +78,11 @@ class LineChartState {
     bool chartTitle = false,
     bool horizontalInterval = false,
     bool verticalInterval = false,
-    bool backgroundColor = false,
   }) {
     return LineChartState(
       chartTitle: chartTitle ? null : this.chartTitle,
       horizontalInterval: horizontalInterval ? null : this.horizontalInterval,
       verticalInterval: verticalInterval ? null : this.verticalInterval,
-      backgroundColor: backgroundColor ? null : this.backgroundColor,
     );
   }
 }

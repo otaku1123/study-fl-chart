@@ -3,6 +3,7 @@ import 'package:settings_ui/settings_ui.dart';
 
 import '../provider/chart_state_notifier.dart';
 import '../state/line_chart_state.dart';
+import 'color_picker_widget.dart';
 
 class SettingWidget extends StatelessWidget {
   const SettingWidget({
@@ -160,59 +161,17 @@ class SettingWidget extends StatelessWidget {
           title: Text('backgroundColor'),
           tiles: [
             SettingsTile(
-              title: Text('赤'),
-              onPressed: (_) {
-                chartStateNotifier.updateBackgroundColor(Colors.red);
-              },
-            ),
-            SettingsTile(
-              title: Text('青'),
-              onPressed: (_) {
-                chartStateNotifier.updateBackgroundColor(Colors.blue);
-              },
-            ),
-            SettingsTile(
-              title: Text('transparent'),
-              onPressed: (_) {
-                chartStateNotifier.updateBackgroundColor(Colors.transparent);
-              },
-            ),
-            SettingsTile.navigation(
-              title: Text('カスタム'),
+              title: Text(''),
               leading: Icon(Icons.color_lens),
-              value: Text('色を選択'),
-              onPressed: (_) {},
+              value: ColorPickerWidget(
+                pickerColor: chartState.backgroundColor,
+                onColorChanged: (color) {
+                  chartStateNotifier.updateBackgroundColor(color);
+                },),
             ),
           ],
         ),
       ],
     );
-    //   Column(
-    //   children: [
-    //     Text('chart type'),
-    //     Text('枠線'),
-    //     Text('グリッド'),
-    //     Switch(value: chartState.showGrid, onChanged: chartStateNotifier.updateShowGrid),
-    //     Text('軸'),
-    //     Text('x軸'),
-    //     Text('y軸'),
-    //     Text('データ'),
-    //     Text('アニメーション'),
-    //     Text('タッチ'),
-    //     Text('背景色'),
-    //     ElevatedButton(
-    //       onPressed: () {
-    //         chartStateNotifier.updateBackgroundColor(Colors.red);
-    //       },
-    //       child: Text('Red'),
-    //     ),
-    //     ElevatedButton(
-    //       onPressed: () {
-    //         chartStateNotifier.updateBackgroundColor(Colors.blue);
-    //       },
-    //       child: Text('Blue'),
-    //     ),
-    //   ],
-    // );
   }
 }
