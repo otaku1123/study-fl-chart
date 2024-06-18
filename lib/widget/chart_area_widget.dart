@@ -33,14 +33,14 @@ class ChartAreaWidget extends StatelessWidget {
         drawHorizontalLine: chartState.showHorizontalGrid,
         getDrawingHorizontalLine: (value) {
           return FlLine(
-            color: Colors.grey,
-            strokeWidth: 1,
+            color: chartState.horizontalGridLineColor,
+            strokeWidth: chartState.horizontalGridLineWidth,
           );
         },
         getDrawingVerticalLine: (value) {
           return FlLine(
-            color: Colors.grey,
-            strokeWidth: 1,
+            color: chartState.verticalGridLineColor,
+            strokeWidth: chartState.verticalGridLineWidth,
           );
         },
         horizontalInterval: chartState.horizontalInterval,

@@ -8,6 +8,10 @@ class LineChartState {
   bool showGrid = true;
   bool showVerticalGrid = true;
   bool showHorizontalGrid = true;
+  double horizontalGridLineWidth = 1.0;
+  Color horizontalGridLineColor = Colors.grey;
+  double verticalGridLineWidth = 1.0;
+  Color verticalGridLineColor = Colors.grey;
   double? horizontalInterval;
   double? verticalInterval;
 
@@ -28,6 +32,10 @@ class LineChartState {
     this.showGrid = true,
     this.showHorizontalGrid = true,
     this.showVerticalGrid = true,
+    this.horizontalGridLineWidth = 1.0,
+    this.horizontalGridLineColor = Colors.grey,
+    this.verticalGridLineWidth = 1.0,
+    this.verticalGridLineColor = Colors.grey,
     this.horizontalInterval,
     this.verticalInterval,
     this.showBorder = true,
@@ -48,6 +56,10 @@ class LineChartState {
     bool? showGrid,
     bool? showHorizontalGrid,
     bool? showVerticalGrid,
+    double? horizontalGridLineWidth,
+    Color? horizontalGridLineColor,
+    double? verticalGridLineWidth,
+    Color? verticalGridLineColor,
     double? horizontalInterval,
     double? verticalInterval,
     bool? showBorder,
@@ -62,6 +74,10 @@ class LineChartState {
       showGrid: showGrid ?? this.showGrid,
       showHorizontalGrid: showHorizontalGrid ?? this.showHorizontalGrid,
       showVerticalGrid: showVerticalGrid ?? this.showVerticalGrid,
+      horizontalGridLineWidth: horizontalGridLineWidth ?? this.horizontalGridLineWidth,
+      horizontalGridLineColor: horizontalGridLineColor ?? this.horizontalGridLineColor,
+      verticalGridLineWidth: verticalGridLineWidth ?? this.verticalGridLineWidth,
+      verticalGridLineColor: verticalGridLineColor ?? this.verticalGridLineColor,
       horizontalInterval: horizontalInterval ?? this.horizontalInterval,
       verticalInterval: verticalInterval ?? this.verticalInterval,
       showBorder: showBorder ?? this.showBorder,

@@ -53,9 +53,63 @@ class SettingWidget extends StatelessWidget {
             ),
             SettingsTile(
               title: Text('getDrawingHorizontalLine'),
+              value: Column(
+                children: [
+                  SettingsTile(
+                    title: Text('line width'),
+                    value: DropdownButtonFormField(
+                        items: [0, 1, 2, 3, 4, 5]
+                            .map((e) => DropdownMenuItem(
+                            value: e,
+                            child: Text(e.toString()),
+                        ))
+                        .toList(),
+                        onChanged: (value) {
+                          chartStateNotifier.updateHorizontalGridLineWidth(value as double?);
+                        },
+                    ),
+                  ),
+                  SettingsTile(
+                    title: Text('color'),
+                    value: ColorPickerWidget(
+                      pickerColor: chartState.horizontalGridLineColor,
+                      onColorChanged: (color) {
+                        chartStateNotifier.updateHorizontalGridLineColor(color);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
             SettingsTile(
               title: Text('getDrawingVerticalLine'),
+              value: Column(
+                children: [
+                  SettingsTile(
+                    title: Text('line width'),
+                    value: DropdownButtonFormField(
+                      items: [0, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                            value: e,
+                            child: Text(e.toString()),
+                          ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier.updateVerticalGridLineWidth(value as double?);
+                      },
+                    ),
+                  ),
+                  SettingsTile(
+                    title: Text('color'),
+                    value: ColorPickerWidget(
+                      pickerColor: chartState.verticalGridLineColor,
+                      onColorChanged: (color) {
+                        chartStateNotifier.updateVerticalGridLineColor(color);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
             SettingsTile(
               title: Text('horizontalInterval'),
@@ -167,7 +221,8 @@ class SettingWidget extends StatelessWidget {
                 pickerColor: chartState.backgroundColor,
                 onColorChanged: (color) {
                   chartStateNotifier.updateBackgroundColor(color);
-                },),
+                },
+              ),
             ),
           ],
         ),
