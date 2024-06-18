@@ -1,16 +1,13 @@
-# fl_chart_sample
+# fl_chartパッケージのサンプル表示
 
-A new Flutter project.
+fl_chartのプロパティが多く、設定が複雑なので、サンプルを表示することで、理解を深める。
 
-## Getting Started
+## 使用したパッケージ
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [fl_chart](https://pub.dev/packages/fl_chart)
+- [hooks_riverpod](https://pub.dev/packages/hooks_riverpod)
+  - チャートの状態管理に使用
+- [settings_ui](https://pub.dev/packages/settings_ui)
+  - 右側のチャート設定画面を表示するために使用 
+- [flutter_colorpicker](https://pub.dev/packages/flutter_colorpicker)
+  - チャートの各種色を設定するために使用 
