@@ -21,7 +21,7 @@ class MainPage extends HookConsumerWidget {
         child: Row(
           children: [
             Expanded(
-              flex: 2,
+              flex: 1,
               child: Column(
                 children: [
                   Expanded(

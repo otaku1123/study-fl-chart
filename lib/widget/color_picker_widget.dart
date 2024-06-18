@@ -21,7 +21,7 @@ class ColorPickerWidget extends StatelessWidget {
         ColorPicker(
           pickerColor: pickerColor,
           onColorChanged: onColorChanged,
-          colorPickerWidth: 200.0,
+          colorPickerWidth: 150.0,
           pickerAreaHeightPercent: 0.7,
           enableAlpha: true,
           displayThumbColor: false,
