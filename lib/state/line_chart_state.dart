@@ -19,6 +19,7 @@ class LineChartState {
   bool showBorder = true;
 
   // lineBarsData
+  Color lineColor = Colors.blue;
   bool isCurved = true;
   double barWidth = 2.0;
   bool isStrokeCapRound = true;
@@ -39,6 +40,7 @@ class LineChartState {
     this.horizontalInterval,
     this.verticalInterval,
     this.showBorder = true,
+    this.lineColor = Colors.blue,
     this.isCurved = true,
     this.barWidth = 2.0,
     this.isStrokeCapRound = true,
@@ -63,6 +65,7 @@ class LineChartState {
     double? horizontalInterval,
     double? verticalInterval,
     bool? showBorder,
+    Color? lineColor,
     bool? isCurved,
     double? barWidth,
     bool? isStrokeCapRound,
@@ -81,6 +84,7 @@ class LineChartState {
       horizontalInterval: horizontalInterval ?? this.horizontalInterval,
       verticalInterval: verticalInterval ?? this.verticalInterval,
       showBorder: showBorder ?? this.showBorder,
+      lineColor: lineColor ?? this.lineColor,
       isCurved: isCurved ?? this.isCurved,
       barWidth: barWidth ?? this.barWidth,
       isStrokeCapRound: isStrokeCapRound ?? this.isStrokeCapRound,

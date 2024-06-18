@@ -160,6 +160,15 @@ class SettingWidget extends StatelessWidget {
           title: Text('lineBarsData'),
           tiles: [
             SettingsTile(
+              title: Text('color'),
+              value: ColorPickerWidget(
+                pickerColor: chartState.lineColor,
+                onColorChanged: (color) {
+                  chartStateNotifier.updateLineColor(color);
+                },
+              ),
+            ),
+            SettingsTile(
               title: Text('spots'),
             ),
             SettingsTile.switchTile(

@@ -62,6 +62,10 @@ class ChartStateNotifier extends StateNotifier<LineChartState> {
     state = state.copyWith(showBorder: showBorder);
   }
 
+  void updateLineColor(Color color) {
+    state = state.copyWith(lineColor: color);
+  }
+
   void updateIsCurved(bool isCurved) {
     state = state.copyWith(isCurved: isCurved);
   }

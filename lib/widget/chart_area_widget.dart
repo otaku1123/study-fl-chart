@@ -69,6 +69,7 @@ class ChartAreaWidget extends StatelessWidget {
 
   List<LineChartBarData> get lineBarDataList => [
         LineChartBarData(
+          color: chartState.lineColor,
           spots: [
             FlSpot(0, 1),
             FlSpot(1, 3),
