@@ -45,6 +45,26 @@ class ChartStateNotifier extends StateNotifier<LineChartState> {
     state = state.copyWith(showBorder: showBorder);
   }
 
+  void updateIsCurved(bool isCurved) {
+    state = state.copyWith(isCurved: isCurved);
+  }
+
+  void updateBarWidth(double? width) {
+    if (width == null) {
+      state = state.copyWithNull(barWidth: true);
+    } else {
+      state = state.copyWith(barWidth: width);
+    }
+  }
+
+  void updateIsStrokeCapRound(bool isStrokeCapRound) {
+    state = state.copyWith(isStrokeCapRound: isStrokeCapRound);
+  }
+
+  void updateShowDotData(bool showDotData) {
+    state = state.copyWith(showDotData: showDotData);
+  }
+
   void updateBackgroundColor(Color color) {
     state = state.copyWith(backgroundColor: color);
   }

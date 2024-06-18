@@ -76,11 +76,11 @@ class ChartAreaWidget extends StatelessWidget {
             FlSpot(3, 4),
             FlSpot(4, 5),
           ],
-          isCurved: true,
+          isCurved: chartState.isCurved,
           barWidth: 4,
-          isStrokeCapRound: true,
+          isStrokeCapRound: chartState.isStrokeCapRound,
           dotData: FlDotData(
-            show: true,
+            show: chartState.showDotData,
           ),
         ),
       ];

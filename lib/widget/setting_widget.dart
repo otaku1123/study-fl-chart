@@ -104,11 +104,27 @@ class SettingWidget extends StatelessWidget {
         SettingsSection(
           title: Text('lineBarsData'),
           tiles: [
-            SettingsTile(title: Text('spots'),),
-            SettingsTile(title: Text('isCurved'),),
-            SettingsTile(title: Text('barWidth'),),
-            SettingsTile(title: Text('isStrokeCapRound'),),
-            SettingsTile(title: Text('dotData'),),
+            SettingsTile(
+              title: Text('spots'),
+            ),
+            SettingsTile.switchTile(
+              title: Text('isCurved'),
+              initialValue: chartState.isCurved,
+              onToggle: chartStateNotifier.updateIsCurved,
+            ),
+            SettingsTile(
+              title: Text('barWidth'),
+            ),
+            SettingsTile.switchTile(
+              title: Text('isStrokeCapRound'),
+              initialValue: chartState.isStrokeCapRound,
+              onToggle: chartStateNotifier.updateIsStrokeCapRound,
+            ),
+            SettingsTile.switchTile(
+              title: Text('dotData'),
+              initialValue: chartState.showDotData,
+              onToggle: chartStateNotifier.updateShowDotData,
+            ),
           ],
         ),
         SettingsSection(

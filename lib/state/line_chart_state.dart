@@ -11,8 +11,14 @@ class LineChartState {
   double? horizontalInterval;
   double? verticalInterval;
 
-  //borderData
+  // borderData
   bool showBorder = true;
+
+  // lineBarsData
+  bool isCurved = true;
+  double? barWidth;
+  bool isStrokeCapRound = true;
+  bool showDotData = true;
 
   // 背景色
   Color? backgroundColor;
@@ -25,6 +31,10 @@ class LineChartState {
     this.horizontalInterval,
     this.verticalInterval,
     this.showBorder = true,
+    this.isCurved = true,
+    this.barWidth,
+    this.isStrokeCapRound = true,
+    this.showDotData = true,
     this.backgroundColor,
   });
 
@@ -40,6 +50,10 @@ class LineChartState {
     double? horizontalInterval,
     double? verticalInterval,
     bool? showBorder,
+    bool? isCurved,
+    double? barWidth,
+    bool? isStrokeCapRound,
+    bool? showDotData,
     Color? backgroundColor,
   }) {
     return LineChartState(
@@ -50,6 +64,10 @@ class LineChartState {
       horizontalInterval: horizontalInterval ?? this.horizontalInterval,
       verticalInterval: verticalInterval ?? this.verticalInterval,
       showBorder: showBorder ?? this.showBorder,
+      isCurved: isCurved ?? this.isCurved,
+      barWidth: barWidth ?? this.barWidth,
+      isStrokeCapRound: isStrokeCapRound ?? this.isStrokeCapRound,
+      showDotData: showDotData ?? this.showDotData,
       backgroundColor: backgroundColor ?? this.backgroundColor,
     );
   }
