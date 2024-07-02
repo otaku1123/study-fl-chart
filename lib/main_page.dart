@@ -31,10 +31,10 @@ class MainPage extends HookConsumerWidget {
                       chartStateNotifier: chartStateNotifier,
                     ),
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: CodePreviewWidget(),
-                  ),
+                  // Expanded(
+                  //   flex: 1,
+                  //   child: CodePreviewWidget(),
+                  // ),
                 ],
               ),
             ),

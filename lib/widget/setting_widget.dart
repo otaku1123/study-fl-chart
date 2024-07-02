@@ -20,20 +20,6 @@ class SettingWidget extends StatelessWidget {
     return SettingsList(
       sections: [
         SettingsSection(
-          title: Text('チャートタイプ'),
-          tiles: [
-            SettingsTile(
-              title: Text('折れ線グラフ'),
-            ),
-            SettingsTile(
-              title: Text('棒グラフ'),
-            ),
-            SettingsTile(
-              title: Text('円グラフ'),
-            ),
-          ],
-        ),
-        SettingsSection(
           title: Text('gridData'),
           tiles: [
             SettingsTile.switchTile(
