@@ -89,15 +89,49 @@ class ChartAreaWidget extends StatelessWidget {
       ];
 
   FlTitlesData get titleData => FlTitlesData(
-        leftTitles: AxisTitles(
+        show: chartState.showTitle,
+        bottomTitles: AxisTitles(
           sideTitles: SideTitles(
-            showTitles: true,
+            showTitles: chartState.showBottomTitle,
             reservedSize: 30,
             getTitlesWidget: (value, meta) {
-              String text = value.toInt().toString();
               return SideTitleWidget(
-                  axisSide: meta.axisSide, space: 8, child: Text(text));
+                  axisSide: meta.axisSide, space: 8, child: Text(value.toString()));
             },
+            interval: chartState.bottomTitleInterval,
+          ),
+        ),
+        leftTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: chartState.showLeftTitle,
+            reservedSize: 30,
+            getTitlesWidget: (value, meta) {
+              return SideTitleWidget(
+                  axisSide: meta.axisSide, space: 8, child: Text(value.toString()));
+            },
+            interval: chartState.leftTitleInterval,
+          ),
+        ),
+        rightTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: chartState.showRightTitle,
+            reservedSize: 30,
+            getTitlesWidget: (value, meta) {
+              return SideTitleWidget(
+                  axisSide: meta.axisSide, space: 8, child: Text(value.toString()));
+            },
+            interval: chartState.rightTitleInterval,
+          ),
+        ),
+        topTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: chartState.showTopTitle,
+            reservedSize: 30,
+            getTitlesWidget: (value, meta) {
+              return SideTitleWidget(
+                  axisSide: meta.axisSide, space: 8, child: Text(value.toString()));
+            },
+            interval: chartState.topTitleInterval,
           ),
         ),
       );

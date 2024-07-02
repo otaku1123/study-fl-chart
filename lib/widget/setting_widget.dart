@@ -314,15 +314,115 @@ class SettingWidget extends StatelessWidget {
           tiles: [
             SettingsTile(
               title: Text('topTitles'),
+              value: Column(
+                children: [
+                  SettingsTile.switchTile(
+                    title: Text('showTitles'),
+                    initialValue: chartState.showTopTitle,
+                    onToggle: chartStateNotifier.updateShowTopTitle,
+                  ),
+                  SettingsTile(
+                    title: Text('topTitleInterval'),
+                    value: DropdownButtonFormField(
+                      value: chartState.topTitleInterval,
+                      items: [0.5, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier
+                            .updateTopTitleInterval(value as double);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
             SettingsTile(
               title: Text('leftTitles'),
+              value: Column(
+                children: [
+                  SettingsTile.switchTile(
+                    title: Text('showTitles'),
+                    initialValue: chartState.showLeftTitle,
+                    onToggle: chartStateNotifier.updateShowLeftTitle,
+                  ),
+                  SettingsTile(
+                    title: Text('leftTitleInterval'),
+                    value: DropdownButtonFormField(
+                      value: chartState.leftTitleInterval,
+                      items: [0.5, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier
+                            .updateLeftTitleInterval(value as double);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
             SettingsTile(
               title: Text('rightTitles'),
+              value: Column(
+                children: [
+                  SettingsTile.switchTile(
+                    title: Text('showTitles'),
+                    initialValue: chartState.showRightTitle,
+                    onToggle: chartStateNotifier.updateShowRightTitle,
+                  ),
+                  SettingsTile(
+                    title: Text('rightTitleInterval'),
+                    value: DropdownButtonFormField(
+                      value: chartState.rightTitleInterval,
+                      items: [0.5, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier
+                            .updateRightTitleInterval(value as double);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
             SettingsTile(
               title: Text('bottomTitles'),
+              value: Column(
+                children: [
+                  SettingsTile.switchTile(
+                    title: Text('showTitles'),
+                    initialValue: chartState.showBottomTitle,
+                    onToggle: chartStateNotifier.updateShowBottomTitle,
+                  ),
+                  SettingsTile(
+                    title: Text('bottomTitleInterval'),
+                    value: DropdownButtonFormField(
+                      value: chartState.bottomTitleInterval,
+                      items: [0.5, 1, 2, 3, 4, 5]
+                          .map((e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e.toString()),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        chartStateNotifier
+                            .updateBottomTitleInterval(value as double);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

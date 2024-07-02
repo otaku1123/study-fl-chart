@@ -33,6 +33,17 @@ class LineChartState {
   bool isStrokeCapRound = true;
   bool showDotData = true;
 
+  // titleData
+  bool showTitle = true;
+  bool showBottomTitle = true;
+  bool showRightTitle = true;
+  bool showLeftTitle = true;
+  bool showTopTitle = true;
+  double bottomTitleInterval = 1.0;
+  double rightTitleInterval = 1.0;
+  double leftTitleInterval = 1.0;
+  double topTitleInterval = 1.0;
+
   // 背景色
   Color backgroundColor = Colors.white;
 
@@ -61,6 +72,15 @@ class LineChartState {
     this.barWidth = 2.0,
     this.isStrokeCapRound = true,
     this.showDotData = true,
+    this.showTitle = true,
+    this.showBottomTitle = true,
+    this.showRightTitle = true,
+    this.showLeftTitle = true,
+    this.showTopTitle = true,
+    this.bottomTitleInterval = 1.0,
+    this.rightTitleInterval = 1.0,
+    this.leftTitleInterval = 1.0,
+    this.topTitleInterval = 1.0,
     this.backgroundColor = Colors.white,
   });
 
@@ -94,6 +114,15 @@ class LineChartState {
     double? barWidth,
     bool? isStrokeCapRound,
     bool? showDotData,
+    bool? showTitle,
+    bool? showBottomTitle,
+    bool? showRightTitle,
+    bool? showLeftTitle,
+    bool? showTopTitle,
+    double? bottomTitleInterval,
+    double? rightTitleInterval,
+    double? leftTitleInterval,
+    double? topTitleInterval,
     Color? backgroundColor,
   }) {
     return LineChartState(
@@ -121,6 +150,15 @@ class LineChartState {
       barWidth: barWidth ?? this.barWidth,
       isStrokeCapRound: isStrokeCapRound ?? this.isStrokeCapRound,
       showDotData: showDotData ?? this.showDotData,
+      showTitle: showTitle ?? this.showTitle,
+      showBottomTitle: showBottomTitle ?? this.showBottomTitle,
+      showRightTitle: showRightTitle ?? this.showRightTitle,
+      showLeftTitle: showLeftTitle ?? this.showLeftTitle,
+      showTopTitle: showTopTitle ?? this.showTopTitle,
+      bottomTitleInterval: bottomTitleInterval ?? this.bottomTitleInterval,
+      rightTitleInterval: rightTitleInterval ?? this.rightTitleInterval,
+      leftTitleInterval: leftTitleInterval ?? this.leftTitleInterval,
+      topTitleInterval: topTitleInterval ?? this.topTitleInterval,
       backgroundColor: backgroundColor ?? this.backgroundColor,
     );
   }

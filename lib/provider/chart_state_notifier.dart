@@ -118,6 +118,42 @@ class ChartStateNotifier extends StateNotifier<LineChartState> {
     state = state.copyWith(showDotData: showDotData);
   }
 
+  void updateShowTitle(bool showTitle) {
+    state = state.copyWith(showTitle: showTitle);
+  }
+
+  void updateShowBottomTitle(bool showBottomTitle) {
+    state = state.copyWith(showBottomTitle: showBottomTitle);
+  }
+
+  void updateShowRightTitle(bool showRightTitle) {
+    state = state.copyWith(showRightTitle: showRightTitle);
+  }
+
+  void updateShowLeftTitle(bool showLeftTitle) {
+    state = state.copyWith(showLeftTitle: showLeftTitle);
+  }
+
+  void updateShowTopTitle(bool showTopTitle) {
+    state = state.copyWith(showTopTitle: showTopTitle);
+  }
+
+  void updateBottomTitleInterval(double? interval) {
+    state = state.copyWith(bottomTitleInterval: interval);
+  }
+
+  void updateRightTitleInterval(double? interval) {
+    state = state.copyWith(rightTitleInterval: interval);
+  }
+
+  void updateLeftTitleInterval(double? interval) {
+    state = state.copyWith(leftTitleInterval: interval);
+  }
+
+  void updateTopTitleInterval(double? interval) {
+    state = state.copyWith(topTitleInterval: interval);
+  }
+
   void updateBackgroundColor(Color color) {
     state = state.copyWith(backgroundColor: color);
   }
